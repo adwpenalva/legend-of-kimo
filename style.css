@@ -1,0 +1,10 @@
+body {
+  background-image: url('background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  align-items: center;
+  vertical-align: center;
+  height: auto;
+  width: auto;
+}

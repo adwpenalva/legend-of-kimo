@@ -9,7 +9,6 @@ class Game {
     this.startTime = new Date().getTime();
     this.currentTime = 0;
     this.createSwords();
-    this.loop();
   }
 
   createSwords() {
@@ -21,17 +20,33 @@ class Game {
     }
   }
 
+  startGame() {
+    this.loop();
+    this.startMusic();
+  }
+
+  startMusic() {
+    let audioElement = new Audio('background-music.wav');
+    audioElement.play();
+  }
+
   cleanCanvas = () => {
     this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
   };
 
+  getScore() {
+    var startTime = undefined; // define as ~new Date()~ when game starts
+    var elapsed = undefined; // define as (new Date() - startTime )
+    var score = elapsed * 50;
+  }
+
   paint = () => {
     this.cleanCanvas();
-
+    this.context.fillStyle = 'white';
+    this.context.fillRect(0, 0, this.context.canvas.width, this.context.canvas.height);
     this.kimo.drawImage();
 
     for (let sword of this.swordsArrayHorizontal) {
-      sword.drawImage();
       sword.drawImage();
     }
 
@@ -51,9 +66,10 @@ class Game {
     }
   };
 
-  loop = timestamp => {
+  loop = () => {
     this.paint();
     this.runLogic();
+    this.kimo.update();
 
     if (this.gameIsRunning) {
       window.requestAnimationFrame(this.loop);
