@@ -1,13 +1,18 @@
 class Game {
   constructor($canvas) {
+    this.menu = new Menu(this);
     this.canvas = $canvas;
     this.context = $canvas.getContext('2d');
     this.kimo = new Player(this);
     this.swordsArrayVertical = [];
     this.swordsArrayHorizontal = [];
-    this.gameIsRunning = true;
+    this.swordsArrayVerticalUp = [];
+    this.swordsArrayHorizontalRight = [];
+    this.gameIsRunning = false;
     this.startTime = new Date().getTime();
     this.currentTime = 0;
+    this.image = new Image();
+    this.image.src = './iceboard.jpg';
     this.createSwords();
   }
 
@@ -17,7 +22,15 @@ class Game {
       this.swordsArrayHorizontal.push(sword);
       const swordV = new SwordV(this, 0 + i * 100 * -1);
       this.swordsArrayVertical.push(swordV);
+      // const swordVUp = new SwordVUp(this, 400 + i * 100);
+      // this.swordsArrayVerticalUp.push(swordVUp);
+      // const swordHRight = new SwordHRight(this, i * 100 * -1);
+      // this.swordsArrayHorizontalRight.push(swordHRight);
     }
+  }
+
+  startMenu() {
+    this.menu.drawStartImage();
   }
 
   startGame() {
@@ -42,8 +55,9 @@ class Game {
 
   paint = () => {
     this.cleanCanvas();
-    this.context.fillStyle = 'white';
-    this.context.fillRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+    this.context.drawImage(this.image, 0, 0, 600, 400);
+    // this.context.fillStyle = 'white';
+    // this.context.fillRect(0, 0, this.context.canvas.width, this.context.canvas.height);
     this.kimo.drawImage();
 
     for (let sword of this.swordsArrayHorizontal) {
@@ -52,6 +66,14 @@ class Game {
 
     for (let swordV of this.swordsArrayVertical) {
       swordV.drawImage();
+    }
+
+    for (let swordVUp of this.swordsArrayVerticalUp) {
+      swordVUp.drawImage();
+    }
+
+    for (let swordHRight of this.swordsArrayHorizontalRight) {
+      swordHRight.drawImage();
     }
   };
 

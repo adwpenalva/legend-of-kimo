@@ -1,10 +1,10 @@
 body {
-  background-image: url('background.png');
+  background-image: url('backgroundice.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   align-items: center;
   vertical-align: center;
-  height: auto;
-  width: auto;
+  height: 1000px;
+  width: 100%;
 }

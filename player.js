@@ -12,13 +12,13 @@ class Player {
     this.speed = 15;
     this.friction = 0.97;
     this.image = new Image();
-    this.image.src = './individual-sprites/adventurer-die-01.png';
+    this.image.src = './individual-sprites/adventurer-idle-2-01.png';
     console.log(this.game);
     this.setKeyboardEventListeners();
   }
 
   drawImage() {
-    this.game.context.drawImage(this.image, this.positionX - 17.15, this.positionY - 11.5);
+    this.game.context.drawImage(this.image, this.positionX - 15.15, this.positionY - 11.5);
   }
 
   update() {
