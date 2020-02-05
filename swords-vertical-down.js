@@ -43,6 +43,6 @@ class SwordV {
   }
 
   runLogic() {
-    this.positionY += 4;
+    this.positionY += this.game.swordspeed;
   }
 }

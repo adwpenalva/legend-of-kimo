@@ -42,7 +42,7 @@ class SwordHRight {
   }
 
   runLogic() {
-    this.positionX += 4;
+    this.positionX += this.game.swordspeed;
     this.checkCollision();
   }
 }
