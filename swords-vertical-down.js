@@ -39,6 +39,7 @@ class SwordV {
       kimoY < vswordY + vswordHeight
     ) {
       this.game.gameIsRunning = false;
+      this.game.menu.screen = 'gameover';
     }
   }
 

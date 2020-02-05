@@ -38,6 +38,7 @@ class SwordHRight {
       kimoY < swordY + swordHeight
     ) {
       this.game.gameIsRunning = false;
+      this.game.menu.screen = 'gameover';
     }
   }
 

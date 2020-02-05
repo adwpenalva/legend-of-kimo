@@ -33,6 +33,7 @@ class Menu {
       switch (event.keyCode) {
         case 13:
           if (this.screen === 'game') {
+            this.playMusic();
             this.game.gameIsRunning = true;
             this.game.startGame();
           } else if (this.screen === 'lore') {
@@ -43,5 +44,10 @@ class Menu {
           break;
       }
     });
+  }
+
+  playMusic() {
+    let audioElement = new Audio('background-music.wav');
+    audioElement.play();
   }
 }
