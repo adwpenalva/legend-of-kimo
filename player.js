@@ -10,7 +10,7 @@ class Player {
     this.accelerationX = 0;
     this.accelerationY = 0;
     this.speed = 15;
-    this.friction = 0.97;
+    this.friction = 0.98;
     this.image = new Image();
     this.image.src = './individual-sprites/adventurer-idle-2-01.png';
     console.log(this.game);
@@ -18,10 +18,18 @@ class Player {
   }
 
   drawImage() {
-    this.game.context.drawImage(this.image, this.positionX - 15.15, this.positionY - 11.5);
+    var xSpriteOffset = 15.15;
+    var ySpriteOffset = 11.15;
+    this.game.context.drawImage(
+      this.image,
+      this.positionX - xSpriteOffset,
+      this.positionY - ySpriteOffset
+    );
   }
 
   update() {
+    this.velX *= this.friction;
+    this.velY *= this.friction;
     this.positionX += this.velX;
     this.positionY += this.velY;
     if (this.positionY > 385) {
@@ -60,6 +68,30 @@ class Player {
           break;
       }
     });
+    // window.addEventListener('keyup', event => {
+    //   switch (event.key) {
+    //     case 'ArrowDown':
+    //       if (this.velY > 0) {
+    //         this.velY -= 0.01;
+    //       }
+    //       break;
+    //     case 'ArrowUp':
+    //       if (this.velY < 0) {
+    //         this.velY += 0.01;
+    //       }
+    //       break;
+    //     case 'ArrowRight':
+    //       if (this.velX > 0) {
+    //         this.velX -= 0.1;
+    //       }
+    //       break;
+    //     case 'ArrowLeft':
+    //       if (this.velX < 0) {
+    //         this.velX += 0.01;
+    //       }
+    //       break;
+    //   }
+    // });
   }
 }
 

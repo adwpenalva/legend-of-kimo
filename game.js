@@ -14,6 +14,9 @@ class Game {
     this.image = new Image();
     this.image.src = './iceboard.jpg';
     this.createSwords();
+    this.xWindowCenter = window.width / 2;
+    this.yWindowCenter = window.height / 2;
+    this.score = 0;
   }
 
   createSwords() {
@@ -89,6 +92,8 @@ class Game {
   };
 
   loop = () => {
+    this.score++;
+    console.log(this.score);
     this.paint();
     this.runLogic();
     this.kimo.update();

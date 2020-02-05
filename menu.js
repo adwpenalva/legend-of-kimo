@@ -9,7 +9,7 @@ class Menu {
   }
 
   drawStartImage() {
-    this.context.drawImage(this.image, 0, 0);
+    this.context.drawImage(this.image, 0, 0, 600, 400);
   }
 
   commands() {
