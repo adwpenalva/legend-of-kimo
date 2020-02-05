@@ -1,13 +1,11 @@
 class Scoreboard {
   constructor(game) {
     this.game = game;
-
-    this.$scoreSpan = document.querySelector('aside h1 span');
+    this.$scoreSpan = document.querySelector('h1');
+    this.score = this.game.score;
   }
 
   paint() {
-    const score = this.game.score;
-
-    this.$scoreSpan.innerText = score;
+    this.$scoreSpan.innerText = `Score: ${this.game.score}`;
   }
 }

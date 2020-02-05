@@ -39,7 +39,8 @@ class SwordVUp {
       kimoY < vswordY + vswordHeight
     ) {
       this.game.gameIsRunning = false;
-      this.game.menu.screen = 'gameover';
+      this.game.menu.drawGameover();
+      this.game.menu.stopMusic();
     }
   }
 

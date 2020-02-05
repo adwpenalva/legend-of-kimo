@@ -1,3 +1,5 @@
+//let audioElement = new Audio();
+
 class Menu {
   constructor(game) {
     this.game = game;
@@ -10,6 +12,10 @@ class Menu {
     this.lore.src = './lore.png';
     this.instructions = new Image();
     this.instructions.src = './instructions.png';
+    this.gameover = new Image();
+    this.gameover.src = './game-over.png';
+    this.audioElement = new Audio();
+    this.audioElement.src = 'background-music.wav';
     this.commands();
   }
 
@@ -28,6 +34,11 @@ class Menu {
     this.screen = 'game';
   }
 
+  drawGameover() {
+    this.context.drawImage(this.gameover, 0, 0, 600, 400);
+    this.screen = 'gameover';
+  }
+
   commands() {
     window.addEventListener('keydown', event => {
       switch (event.keyCode) {
@@ -40,6 +51,8 @@ class Menu {
             this.drawLore();
           } else if (this.screen === 'instructions') {
             this.drawInstructions();
+          } else if (this.screen === 'gameover') {
+            this.drawStartImage();
           }
           break;
       }
@@ -47,7 +60,10 @@ class Menu {
   }
 
   playMusic() {
-    let audioElement = new Audio('background-music.wav');
-    audioElement.play();
+    this.audioElement.play();
+  }
+
+  stopMusic() {
+    this.audioElement.pause();
   }
 }

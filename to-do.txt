@@ -5,12 +5,7 @@ Must:
 }
 
 -> Score {
-~ Display score
 ~ Create highscores table
-}
-
--> Progression / win-screen {
-~ make game go harder as time goes on
 }
 
 -> Music {
@@ -32,5 +27,10 @@ Want:
 ~ kimo death sound
 }
 
+-> Power-ups {
+~ create power-ups
+}
 
 ASK LIST:
+new game at gameover screen
+music stop when die

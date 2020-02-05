@@ -43,8 +43,8 @@ class Game {
   }
 
   startMusic() {
-    let audioElement = new Audio('background-music.wav');
-    audioElement.play();
+    //let audioElement = new Audio('background-music.wav');
+    //audioElement.play();
   }
 
   cleanCanvas = () => {
@@ -71,6 +71,8 @@ class Game {
     for (let swordHRight of this.swordsArrayHorizontalRight) {
       swordHRight.drawImage();
     }
+
+    this.scoreBoard.paint();
   };
 
   runLogic = () => {
@@ -94,7 +96,7 @@ class Game {
 
   loop = () => {
     this.score++;
-    console.log(this.score);
+    //console.log(this.score);
     this.paint();
     this.runLogic();
     this.kimo.update();
