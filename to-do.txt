@@ -8,19 +8,7 @@ Must:
 ~ Create highscores table
 }
 
--> Music {
-~ find / create sound effects
-}
-
-
 Want:
--> Highscores {
-~ add a highscores list
-~ create an array of objects
-~ every object has 3 properties: name, score and date
-~ after each game pull new values in the array
-~ display array side / after canvas
-}
 
 -> Custom sounds {
 ~ menu sound effects

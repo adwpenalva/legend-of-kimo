@@ -10,7 +10,6 @@ class Game {
     this.swordsArrayVerticalUp = [];
     this.swordsArrayHorizontalRight = [];
     this.gameIsRunning = false;
-    this.currentTime = 0;
     this.image = new Image();
     this.image.src = './iceboard.jpg';
     this.createSwords();
@@ -38,13 +37,8 @@ class Game {
   }
 
   startGame() {
+    this.gameIsRunning = true;
     this.loop();
-    this.startMusic();
-  }
-
-  startMusic() {
-    //let audioElement = new Audio('background-music.wav');
-    //audioElement.play();
   }
 
   cleanCanvas = () => {
@@ -100,10 +94,24 @@ class Game {
     this.paint();
     this.runLogic();
     this.kimo.update();
-    this.swordspeed *= 1.0002;
+    this.swordspeed *= 1.00025;
 
     if (this.gameIsRunning) {
       window.requestAnimationFrame(this.loop);
     }
   };
+
+  reset() {
+    this.swordspeed = 1.5;
+    this.swordsArrayVertical = [];
+    this.swordsArrayHorizontal = [];
+    this.swordsArrayVerticalUp = [];
+    this.swordsArrayHorizontalRight = [];
+    this.kimo.positionX = 300;
+    this.kimo.positionY = 200;
+    this.score = 0;
+    this.kimo.velX = 0;
+    this.kimo.velY = 0;
+    this.createSwords();
+  }
 }

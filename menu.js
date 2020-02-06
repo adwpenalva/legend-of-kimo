@@ -47,11 +47,13 @@ class Menu {
             this.playMusic();
             this.game.gameIsRunning = true;
             this.game.startGame();
+            this.screen = 'playing';
           } else if (this.screen === 'lore') {
             this.drawLore();
           } else if (this.screen === 'instructions') {
             this.drawInstructions();
           } else if (this.screen === 'gameover') {
+            this.game.reset();
             this.drawStartImage();
           }
           break;
