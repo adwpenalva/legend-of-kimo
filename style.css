@@ -1,7 +1,9 @@
 @import url(//db.onlinewebfonts.com/c/13c63232af298878387142e0da62c96f?family=Fixedsys+Excelsior+3.01);
 
 body {
+  min-height: 100vh;
   background-image: url('/images/background.png');
+
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;

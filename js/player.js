@@ -51,18 +51,22 @@ class Player {
     window.addEventListener('keydown', event => {
       switch (event.key) {
         case 'ArrowDown':
+          event.preventDefault();
           this.velY = 3;
           this.velX = 0;
           break;
         case 'ArrowUp':
+          event.preventDefault();
           this.velY = -3;
           this.velX = 0;
           break;
         case 'ArrowRight':
+          event.preventDefault();
           this.velX = 3;
           this.velY = 0;
           break;
         case 'ArrowLeft':
+          event.preventDefault();
           this.velX = -3;
           this.velY = 0;
           break;
