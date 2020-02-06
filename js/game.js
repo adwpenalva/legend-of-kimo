@@ -16,7 +16,6 @@ class Game {
     this.xWindowCenter = window.width / 2;
     this.yWindowCenter = window.height / 2;
     this.score = 0;
-    this.scoreBoard = new Scoreboard(this);
   }
 
   createSwords() {
@@ -65,8 +64,6 @@ class Game {
     for (let swordHRight of this.swordsArrayHorizontalRight) {
       swordHRight.drawImage();
     }
-
-    this.scoreBoard.paint();
   };
 
   runLogic = () => {
@@ -90,7 +87,6 @@ class Game {
 
   loop = () => {
     this.score++;
-    //console.log(this.score);
     this.paint();
     this.runLogic();
     this.kimo.update();
