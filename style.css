@@ -3,20 +3,12 @@
 body {
   min-height: 100vh;
   background-image: url('/images/background.png');
-
+  color: antiquewhite;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-aside {
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
-  margin-left: 1em;
-  background-color: white;
 }
 
 @font-face {
@@ -31,6 +23,8 @@ aside {
       format('svg');
 }
 
-#font {
+#text {
   font-family: 'fixedsys';
+  color: '#E0E2E7';
+  text-align: center;
 }
