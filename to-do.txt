@@ -1,8 +1,4 @@
 Must:
--> Start / re-start button {
-~ restart button
-~ eventlistener create a new game from game class
-}
 
 -> Score {
 ~ Create highscores table
@@ -20,5 +16,3 @@ Want:
 }
 
 ASK LIST:
-new game at gameover screen
-music stop when die

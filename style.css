@@ -1,5 +1,7 @@
+@import url(//db.onlinewebfonts.com/c/13c63232af298878387142e0da62c96f?family=Fixedsys+Excelsior+3.01);
+
 body {
-  background-image: url('backgroundice.png');
+  background-image: url('/images/background.png');
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -13,4 +15,20 @@ aside {
   padding: 1em;
   margin-left: 1em;
   background-color: white;
+}
+
+@font-face {
+  font-family: 'fixedsys';
+  src: url('//db.onlinewebfonts.com/t/13c63232af298878387142e0da62c96f.eot');
+  src: url('//db.onlinewebfonts.com/t/13c63232af298878387142e0da62c96f.eot?#iefix')
+      format('embedded-opentype'),
+    url('//db.onlinewebfonts.com/t/13c63232af298878387142e0da62c96f.woff2') format('woff2'),
+    url('//db.onlinewebfonts.com/t/13c63232af298878387142e0da62c96f.woff') format('woff'),
+    url('//db.onlinewebfonts.com/t/13c63232af298878387142e0da62c96f.ttf') format('truetype'),
+    url('//db.onlinewebfonts.com/t/13c63232af298878387142e0da62c96f.svg#Fixedsys Excelsior 3.01')
+      format('svg');
+}
+
+#font {
+  font-family: 'fixedsys';
 }
