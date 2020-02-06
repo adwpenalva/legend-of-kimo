@@ -32,14 +32,14 @@ class Player {
     this.velY *= this.friction;
     this.positionX += this.velX;
     this.positionY += this.velY;
-    if (this.positionY > 375) {
-      this.positionY = 375;
+    if (this.positionY > 575) {
+      this.positionY = 575;
       this.velY = 0;
     } else if (this.positionY < 5) {
       this.positionY = 5;
       this.velY = 0;
-    } else if (this.positionX > 582) {
-      this.positionX = 582;
+    } else if (this.positionX > 782) {
+      this.positionX = 782;
       this.velX = 0;
     } else if (this.positionX < 3) {
       this.positionX = 3;

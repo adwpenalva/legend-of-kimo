@@ -2,7 +2,7 @@ class Game {
   constructor($canvas) {
     this.menu = new Menu(this);
     this.canvas = $canvas;
-    this.swordspeed = 1.5;
+    this.swordspeed = 1.6;
     this.context = $canvas.getContext('2d');
     this.kimo = new Player(this);
     this.swordsArrayVertical = [];
@@ -21,13 +21,13 @@ class Game {
 
   createSwords() {
     for (let i = 0; i < 300; i++) {
-      const sword = new SwordH(this, 600 + i * 100);
+      const sword = new SwordH(this, 800 + i * 100);
       this.swordsArrayHorizontal.push(sword);
-      const swordV = new SwordV(this, -4400 + i * 100 * -1);
+      const swordV = new SwordV(this, -4000 + i * 100 * -1);
       this.swordsArrayVertical.push(swordV);
-      const swordVUp = new SwordVUp(this, 8400 + i * 100);
+      const swordVUp = new SwordVUp(this, 10000 + i * 100);
       this.swordsArrayVerticalUp.push(swordVUp);
-      const swordHRight = new SwordHRight(this, -12600 + i * 100 * -1);
+      const swordHRight = new SwordHRight(this, -20000 + i * 100 * -1);
       this.swordsArrayHorizontalRight.push(swordHRight);
     }
   }
@@ -47,7 +47,7 @@ class Game {
 
   paint = () => {
     this.cleanCanvas();
-    this.context.drawImage(this.image, 0, 0, 600, 400);
+    this.context.drawImage(this.image, 0, 0, 800, 600);
     this.kimo.drawImage();
 
     for (let sword of this.swordsArrayHorizontal) {
@@ -94,7 +94,7 @@ class Game {
     this.paint();
     this.runLogic();
     this.kimo.update();
-    this.swordspeed *= 1.00025;
+    this.swordspeed *= 1.00028;
 
     if (this.gameIsRunning) {
       window.requestAnimationFrame(this.loop);

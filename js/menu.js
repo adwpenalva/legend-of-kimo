@@ -20,25 +20,25 @@ class Menu {
   }
 
   drawStartImage() {
-    this.context.drawImage(this.image, 0, 0, 600, 400);
+    this.context.drawImage(this.image, 0, 0, 800, 600);
     this.screen = 'lore';
   }
 
   drawLore() {
-    this.context.drawImage(this.lore, 0, 0, 600, 400);
+    this.context.drawImage(this.lore, 0, 0, 800, 600);
     this.screen = 'instructions';
   }
 
   drawInstructions() {
-    this.context.drawImage(this.instructions, 0, 0, 600, 400);
+    this.context.drawImage(this.instructions, 0, 0, 800, 600);
     this.screen = 'game';
   }
 
   drawGameover() {
-    this.context.drawImage(this.gameover, 0, 0, 600, 400);
+    this.context.drawImage(this.gameover, 0, 0, 800, 600);
     this.context.fillStyle = 'white';
-    this.context.font = '46px fixedsys';
-    this.context.fillText(`${this.game.score}`, 286, 186);
+    this.context.font = '59px fixedsys';
+    this.context.fillText(`${this.game.score}`, 388, 278);
     this.screen = 'gameover';
   }
 
