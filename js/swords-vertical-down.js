@@ -38,13 +38,13 @@ class SwordV {
       kimoY + kimoHeight > vswordY &&
       kimoY < vswordY + vswordHeight
     ) {
-      this.game.gameIsRunning = false;
-      this.game.menu.drawGameover();
-      this.game.menu.stopMusic();
+      console.log('collided vertical down', this);
+      this.game.endGame();
     }
   }
 
   runLogic() {
     this.positionY += this.game.swordspeed;
+    this.checkCollision();
   }
 }

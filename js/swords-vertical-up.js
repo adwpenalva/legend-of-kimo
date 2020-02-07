@@ -38,13 +38,12 @@ class SwordVUp {
       kimoY + kimoHeight > vswordY &&
       kimoY < vswordY + vswordHeight
     ) {
-      this.game.gameIsRunning = false;
-      this.game.menu.drawGameover();
-      this.game.menu.stopMusic();
+      this.game.endGame();
     }
   }
 
   runLogic() {
     this.positionY -= this.game.swordspeed;
+    this.checkCollision();
   }
 }

@@ -9,7 +9,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1px;
 }
 
 @font-face {
@@ -28,4 +27,15 @@ body {
   font-family: 'fixedsys';
   color: '#E0E2E7';
   text-align: center;
+}
+
+#highscores {
+  background-color: black;
+  margin-right: 1em;
+  padding: 1em;
+  font-size: 2em;
+}
+
+#highscores-table tr th {
+  padding: 10px;
 }

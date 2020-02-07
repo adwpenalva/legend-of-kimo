@@ -37,9 +37,7 @@ class SwordHRight {
       kimoY + kimoHeight > swordY &&
       kimoY < swordY + swordHeight
     ) {
-      this.game.gameIsRunning = false;
-      this.game.menu.drawGameover();
-      this.game.menu.stopMusic();
+      this.game.endGame();
     }
   }
 

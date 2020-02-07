@@ -1,6 +1,7 @@
 class Game {
   constructor($canvas) {
     this.menu = new Menu(this);
+    this.highscore = new Highscore(this);
     this.canvas = $canvas;
     this.swordspeed = 1.6;
     this.context = $canvas.getContext('2d');
@@ -16,6 +17,7 @@ class Game {
     this.xWindowCenter = window.width / 2;
     this.yWindowCenter = window.height / 2;
     this.score = 0;
+    this.finalScore;
   }
 
   createSwords() {
@@ -38,6 +40,15 @@ class Game {
   startGame() {
     this.gameIsRunning = true;
     this.loop();
+  }
+
+  endGame() {
+    console.log('end game');
+    this.gameIsRunning = false;
+    this.highscore.score = this.score;
+    this.menu.drawGameover();
+    this.menu.stopMusic();
+    this.highscore.runLogic();
   }
 
   cleanCanvas = () => {
@@ -67,32 +78,28 @@ class Game {
   };
 
   runLogic = () => {
+    this.score++;
     for (let sword of this.swordsArrayHorizontal) {
       sword.runLogic();
-      sword.checkCollision();
     }
     for (let swordV of this.swordsArrayVertical) {
       swordV.runLogic();
-      swordV.checkCollision();
     }
     for (let swordVUp of this.swordsArrayVerticalUp) {
       swordVUp.runLogic();
-      swordVUp.checkCollision();
     }
     for (let swordHRight of this.swordsArrayHorizontalRight) {
       swordHRight.runLogic();
-      swordHRight.checkCollision();
     }
+    this.kimo.update();
+    this.swordspeed *= 1.00028;
   };
 
   loop = () => {
-    this.score++;
-    this.paint();
     this.runLogic();
-    this.kimo.update();
-    this.swordspeed *= 1.00028;
 
     if (this.gameIsRunning) {
+      this.paint();
       window.requestAnimationFrame(this.loop);
     }
   };

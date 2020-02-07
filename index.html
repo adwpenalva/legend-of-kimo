@@ -11,9 +11,33 @@
     />
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
-  <body onload="initialize()">
+  <body>
+    <div id="highscores">
+      <table id="highscores-table">
+        <h2 id="text">Highscores:</h2>
+        <tr>
+          <th id="high-score-1-name"></th>
+          <th id="high-score-1-score"></th>
+        </tr>
+        <tr>
+          <th id="high-score-2-name"></th>
+          <th id="high-score-2-score"></th>
+        </tr>
+        <tr>
+          <th id="high-score-3-name"></th>
+          <th id="high-score-3-score"></th>
+        </tr>
+        <tr>
+          <th id="high-score-4-name"></th>
+          <th id="high-score-4-score"></th>
+        </tr>
+        <tr>
+          <th id="high-score-5-name"></th>
+          <th id="high-score-5-score"></th>
+        </tr>
+      </table>
+    </div>
     <div>
-      <span id="text">a</span>
       <canvas width="800" height="600"></canvas>
     </div>
     <script src="./js/player.js"></script>
@@ -22,7 +46,7 @@
     <script src="./js/swords-horizontal-right.js"></script>
     <script src="./js/swords-vertical-up.js"></script>
     <script src="./js/menu.js"></script>
-    <script src="./js/score.js"></script>
+    <script src="./js/highscores.js"></script>
     <script src="./js/game.js"></script>
     <script src="./js/main.js"></script>
   </body>

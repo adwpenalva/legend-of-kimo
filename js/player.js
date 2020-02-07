@@ -7,13 +7,9 @@ class Player {
     this.height = 25;
     this.velX = 0;
     this.velY = 0;
-    this.accelerationX = 0;
-    this.accelerationY = 0;
-    this.speed = 15;
     this.friction = 0.98;
     this.image = new Image();
     this.image.src = './images/kimo.png';
-    console.log(this.game);
     this.setKeyboardEventListeners();
   }
 

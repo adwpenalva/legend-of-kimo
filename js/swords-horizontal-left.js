@@ -37,9 +37,8 @@ class SwordH {
       kimoY + kimoHeight > swordY &&
       kimoY < swordY + swordHeight
     ) {
-      this.game.gameIsRunning = false;
-      this.game.menu.drawGameover();
-      this.game.menu.stopMusic();
+      console.log('collided horizontal left', this);
+      this.game.endGame();
     }
   }
 
